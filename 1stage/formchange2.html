@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+	<title></title>
+    </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <body>
+	<!-- use ng-submit to specify a function to call when form submits
+	* ng-submit also prevents browser from doing default POST action when submitting the form -->
+	<form ng-submit="requestFunding()" ng-controller="SomeController">
+	    Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+	    Recommendation: {{needed}}
+	    <button>Fund my startup!</button>
+	    <button ng-click="reset()">Reset</button>
+	</form>
+	<script>
+	    function StartUpController($scope) {
+		$scope.computeNeeded = function() {
+		    $scope.needed = $scope.startingEstimate * 10;
+		};
+		$scope.requestFunding = function() {
+		    window.alert("Sorry, please get more customers first.");
+		};
+		$scope.reset = function() {
+		    $scope.startingEstimate = 0;
+		};
+	    }
+	</script>
+    </body>
+    
+</html>

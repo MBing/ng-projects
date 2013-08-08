@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+	<title></title>
+    </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <body>
+	<form ng-controller="SomeController">
+	   <!--  Starting: <input ng-change="computeNeeded()" ng-model="youCheckedIt"> -->
+	    <!-- funding.needed auto updates whenever funding.startingEstimate changes, so possible simpler template: -->
+	    Starting Better: <input ng-model="funding.startingEstimate">
+	    Recommendation: {{funding.needed}}
+	</form>
+	<script>
+	    function StartUpController($scope) {
+		$scope.funding = { startingEstimate: 0};
+
+		$scope.computeNeeded = function() {
+		    $scope.needed = $scope.startingEstimate * 10;
+		};
+		// update the field no matter how it gets updated via $watch
+		// evaluated as an Angular expression
+		$scope.$watch('funding.startingEstimate', computeNeeded);
+	    }
+	</script>
+    </body>
+    
+</html>
