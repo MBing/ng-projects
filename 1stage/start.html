@@ -1,6 +1,8 @@
 <html ng-app="myApp">
 <body ng-controller="TextController">
-<p>{{someText.message}}</p>
+<!-- you can also use this, but ng-bind is better -->
+<!-- <p>{{someText.message}}</p> -->
+<p ng-bind="someText.message"></p>
 <script
 src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js">
 </script>
