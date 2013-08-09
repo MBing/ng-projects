@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app>
+    <head>
+	<title></title>
+    </head>
+    <!-- latest cdn angular version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <body ng-model="TestFase">
+	<ul class="navbar" ng-controller="NavController">
+	<!-- no DOM access needed for these event handlers of Angular -->
+	    <li class="menu-item" ng-click="doSomething()">Something</li>
+	    <li class="menu-item" ng-click="doSomething()">Something2</li>
+	    <li class="menu-item" ng-click="doSomething()">Something3</li>
+	    <li class="menu-item" ng-click="doSomething()">Something4</li>
+	    <li class="menu-item" ng-click="doSomething()">Something5</li>
+	</ul>
+
+	<div class="contentArea" ng-controller="ContentAreaController">
+	    <div ng-click="doSomething()">Something extra</div>
+	</div>
+	<script>
+	    function NavController($scope) {
+		$scope.doSomething = function() {{
+		    console.log('test nav gelukt');
+		};
+	    }
+
+	    function ContentAreaController($scope) {
+		$scope.doSomething = function() {
+		    console.log('test div gelukt');
+		};
+	    }
+
+	</script>
+    </body>
+    
+</html>
