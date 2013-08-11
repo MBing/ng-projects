@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Tutorial 30 mins</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="app30min_1.js"></script>
+    <script src="maincontroller30min_1.js"></script>
+</head>
+<body>
+    <div id="content" ng-app="MyTutorialApp"  ng-controller="MainController"> 
+    <select ng-model="selectedPerson" ng-options="obj.name for obj in people"></select>
+    <select ng-model="selectedGenre">
+	<option ng-repeat="label in people[selectedPerson.id].music">{{label}}</option>
+    </select>
+    </div>
+</body>
+</html>

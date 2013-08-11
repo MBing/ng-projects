@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Tutorial 30 mins events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="app30min_1.js"></script>
+    <script src="maincontroller30min_2.js"></script>
+</head>
+<body>
+    <div id="content" ng-app="MyTutorialApp"  ng-controller="MainController"> 
+    <input type="text" ng-model="searchText">
+    <ul>
+	<li ng-repeat="person in people | filter:searchText" ng-show="person.live">#{{person.id}} {{person.name}}</li>
+    </ul>
+    <input type="text" ng-model="newPerson">
+    <button ng-click="addNew()">Add</button>
+    </div>
+</body>
+</html>
